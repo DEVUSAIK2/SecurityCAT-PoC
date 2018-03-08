@@ -69,7 +69,7 @@ class Scan(Resource):
             elif req == 'ASVS_3.0.1_10.11':
                 if 'Strict-Transport-Security' in response.headers:
                     output_res['result']['status'] = "PASSED"
-                    output_res['result']['message'] = 'Detected HSTS Header with the value: \n```\n' +  response.headers['Strict-Transport-Security'] + '\n```'
+                    output_res['result']['message'] = 'Detected cookie Header with the value: \n```\n' +  response.headers['cookie'] + '\n```'
                 else:
                     output_res['result']['message'] = 'No HSTS :('
                 output_res['result']['confidenceLevel'] = 90
